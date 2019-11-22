@@ -24,7 +24,7 @@ describe('Post Reducer',()=>{
             content:"This is a post content"
         },
         {
-            id:2345,
+            id:2346,
             title:'A title',
             content:"This is a post content"
         }]
