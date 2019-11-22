@@ -1,14 +1,15 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 import HeadlineComponent from '.'
-import {findByTestAtrr} from '../../utils/test'
+import {findByTestAtrr,checkProps} from '../../utils/test'
 
 /*
 
-TEST-3
+TEST-3 
 describe let us describe a test module.
 
-if i use spec, doesn crash, but if i use header.test.js it does. Why?
+TEST-4
+Add a proptypes check
 */
 
 describe("Initializing Headline with props", ()=>{
@@ -39,5 +40,18 @@ describe("Initializing Headline with no props", ()=>{
     it("It shouldn`t render if there is no props",()=>{
         const headline=findByTestAtrr(wrapper,"headline")
         expect(headline.length).toBe(0)
+    })
+})
+
+describe("Checking proptypes",()=>{
+
+    it("Should not throw a warning",()=>{
+        //hardcode props
+        const expectedProps={
+            title:"Post Title",
+            subtitle:"I don`t know if it is a subtitle or a description"
+        }
+        const propsErr=checkProps(HeadlineComponent,expectedProps)
+        expect(propsErr).toBeUndefined()
     })
 })

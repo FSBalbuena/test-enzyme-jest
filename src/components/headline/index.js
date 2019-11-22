@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Title, Subtitle, Headline} from './components';
-
 const HeadlineComponent =({title,subtitle})=>(
             title?
             <Headline data-test="headline">
@@ -17,12 +16,10 @@ const HeadlineComponent =({title,subtitle})=>(
 )
 
 
-
-
 HeadlineComponent.propTypes={
+    title:PropTypes.string,
+    subtitle:PropTypes.string
 
 }
-HeadlineComponent.defaultProps={
 
-}
 export default HeadlineComponent
