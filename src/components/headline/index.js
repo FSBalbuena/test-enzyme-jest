@@ -4,7 +4,7 @@ import { Title, Subtitle, Headline} from './components';
 const HeadlineComponent =({title,subtitle})=>(
             title?
             <Headline data-test="headline">
-                <Title data-test="title" >
+                <Title data-test="title" as="h1">
                     {title}
                 </Title>
                 <Subtitle data-test="subtitle">
@@ -12,7 +12,6 @@ const HeadlineComponent =({title,subtitle})=>(
                 </Subtitle>
             </Headline>
             :null
-
 )
 
 
