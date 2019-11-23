@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '.';
 import {shallow} from 'enzyme';
-
 import {findByTestAtrr,checkProps} from '../../utils/test'
 
 // checking for proptypes.
@@ -53,17 +52,17 @@ describe("Button component",()=>{
     })
 
     describe("Testing Click",()=>{
-        //i have to spy on this.
-        const handleClick=()=>{}
-
+        //i have to spy on this
+        let spy=jest.fn()
         let props={
             text:"Post",
-            handleClick
+            handleClick:spy
         }
         let wrapper=shallow(<Button {...props}/>)
-        xit('handleClick props must be called when i click the button',()=>{
+        it('handleClick props must be called when i click the button',()=>{
             let button=findByTestAtrr(wrapper,"post-button")
-            button.click()
+            button.simulate('click')
+            expect(spy.mock.calls.length).toBe(1)
         })
     })
 

@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import {testStore,findByTestAtrr} from './utils/test'
+import {shallow} from 'enzyme'
+import {Provider} from 'react-redux'
 
-xit('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+ xit("something",()=>{})
